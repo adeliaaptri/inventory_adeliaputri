@@ -55,7 +55,7 @@
             aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-           <label for="examplelnputEmail" class="form-label">nama</label>
+           <label for="examplelnputEmail" class="form-label">nama barang</label>
            <input type="text" class=form-control" name="nama" id="examplelnputpasswornd1">
       </div>
       <div class="mb-3">

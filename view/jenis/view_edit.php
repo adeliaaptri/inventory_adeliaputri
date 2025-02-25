@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../barang/index.php">barang</a>
+          <a class="nav-link active" aria-current="page" href="../jenis/index.php">jenis</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../jenis/index.php">jenis</a>
@@ -45,20 +45,43 @@
     </div>
   </div>
 </nav>
-       <form action="proses_tambah.php"method="post">
        <div class="container">
-          <h1>data jenis</h1>       <br>
-            <form action="proses_tambah.php" method="post">
+          <h1>data jenis</h1>       <br><br>
+          <?php
+          include '../../config/koneksi.php';
+           $id_jenis=$_GET['id_jenis'];
+           $query = mysqli_query($conn, "SELECT * FROM jenis WHERE id_jenis='$id_jenis'");
+           $result=mysqli_fetch_array($query);
+           ?>
+           <form action="proses_edit.php?id_jenis=<?php echo $result['id_jenis']?>"method="POST">
             <div class="mb-3">
-               <label for="exampleinputEmail" class="form-label">id jenis</label>
-               <input type="number" class="form-control" name="id_jenis" id="examplelnputemail" aria-describedby="e
-             </div>
-           <div class="mb-3>
-           <label for="exampleinputemail" class="form-label">nama</label>
-           <input type="text" class="form-control" name="nama" id="examplelnputpassword">
-         </div>
-          <button type="submit" class="btn btn-primary">submit</button>
-
+                <label for="" class="form-label">ID jenis</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="id_jenis"
+                    value=<?php echo $result['id_jenis']?>
+                    id=""
+                    aria-describedby="helpId"
+                    placeholder=""
+                />
+                <small id="helpId" class="form-text text-muted">Help text</small>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">nama</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="nama"
+                    value="<?php echo $result['nama']?>"
+                    
+                    aria-describedby="helpId"
+                    placeholder=""
+                />
+                <small id="helpId" class="form-text text-muted">Help text</small>
+            </div>
+       <button type="submit" class="btn btn-primary">submit</button>
+ 
       </form>
    </div>
 <body>

@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `db_inventory_adeliaputri`
 --
 
--- -------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `barang`
